@@ -35,7 +35,7 @@ class Utility(private val channelName: String) {
         val file = File(path)
         val retriever = MediaMetadataRetriever()
 
-        retriever.setDataSource(context, Uri.fromFile(file))
+        retriever.setDataSource(file.path)
 
         val durationStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)
         val title = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE) ?: ""
